@@ -1,0 +1,86 @@
+
+---------------------------------------------------------------------------
+
+Adding a new node as a Sink at the end of an existing and running pipeline must be 
+protected as follows:
+
+	a.suspend();		// protection
+	
+	a.addSink( &e );		// E is the new node
+	e.resume();
+	
+	a.resume();			// protection
+
+the reason is that the addSink method may not be run as a single atomic 
+operation, since it adds the node to the sink vector AND must wait until
+the sink returns its token. if A is still running, it may happen that it
+will detect that a new sink node has been added, but the token has not 
+yet been filled in the sink node vector.
+
+NOTE:
+Addind a node somewhere in the middle of an existing and running pipeline has
+not been tested yet. e.g. adding new node N in-between A and B, most probably
+requires suspending A and B. But do not know if this may cause a deadlock!
+
+
+Ending/terminating a node does not need any protection, since the end() method
+just sets a flag for termination and does not initiate the actual termination
+itself. This is because only the thread can terminate itself (only the thread
+can call AfxEndThread() on itself). So the protection mechanism is already in
+built in the node.
+
+---------------------------------------------------------------------------
+
+It's the responsibility of the node to close the handles of the events that it 
+has in common with a sink node. In this way, the sink node will know that the
+source has died, since it gets a WAIT_FAILED while waiting on the events. 
+So, the responsibility of a node is to somehow send a signal to sink nodes 
+that it has finished. This is done by closing the [node<-->sink] handles.
+
+It is NOT the responsibility of a node to inform or somehow signal to its sources
+that it has died. 
+
+A node will find out that one of its sink nodes has died, by waiting on the sink
+node's BUSY event and then checking the state of the sink node's thread if a 
+wait timeout on the event occurs.
+
+
+If a SOURCE node dies, it is the responsibility of a node to terminate itself.
+In this way, nodes on a pipeline terminate according to the dominoe effect.
+		A <-> B <-> C <-> D <-> E
+If C dies, then D terminates itself, followed by E terminating itself, etc.
+
+Note also that to terminate a whole pipeline, all that is required is terminating
+node A and the rest will follow by the dominoe effect. (this works similar to
+e.g. suspending A, will cause all the nodes to be 'suspended' (waiting for data)
+when they exhaust all the data in their buffers).
+
+
+If a SINK node dies, a node will mark that sink node as dead, but must still
+continue running (as best as it can).
+		A <-> B <-> C <-> D <-> E
+If D and E die, the nodes  A, B, C continue running.  C continues running even
+though it's push function is not doing anything as node D is marked as DEAD.
+Such a condition may result in data not being deallocated as C used to just pass
+it on to D (and E was handling the deallocation). But this case is correct and
+follows the pipeline principle, i.e. destroying the last part of the pipe can 
+cause water to leak from that end. 
+
+---------------------------------------------------------------------------
+
+The default behaviour of ProcessorNode is to pass through the data received
+from the first source node to its sink nodes unchanged.
+
+		A <-->	NODE <--> K
+
+		B <-->		 <--> L
+					
+					 <--> M
+
+will received data 'a' from source node A, 'b' from B and will send data 'a'
+unchanged to sink nodes K, L and M.  If no source node attached, will send
+nothing to the sink nodes and will wait for ever.
+
+---------------------------------------------------------------------------
+
+

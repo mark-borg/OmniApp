@@ -1,0 +1,527 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\OmniApp2.ico"
+IDR_LARGE_APP_ICON      ICON                    "res\\ico00001.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDR_FLOAT_WINDOW_TOOLBAR BITMAP                  "res\\view_bar.bmp"
+IDR_OMNI_FLOAT_WINDOW_TOOLBAR BITMAP                  "bitmaps\\float_wi.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_PROCESSING_PLAY
+    BUTTON      ID_PROCESSING_PAUSE
+    BUTTON      ID_PROCESSING_STOP
+END
+
+IDR_FLOAT_WINDOW_TOOLBAR TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_SAVE_PICTURE
+    BUTTON      ID_SWAP_LEFT_RIGHT
+    BUTTON      ID_ZOOM_IN
+    BUTTON      ID_ZOOM_OUT
+    BUTTON      ID_PAN_CAMERA_LEFT
+    BUTTON      ID_PAN_CAMERA_RIGHT
+    BUTTON      ID_TILT_CAMERA_UP
+    BUTTON      ID_TILT_CAMERA_DOWN
+    BUTTON      ID_ROLL_CAMERA_CCW
+    BUTTON      ID_ROLL_CAMERA
+    BUTTON      ID_LOCK_WINDOW
+END
+
+IDR_OMNI_FLOAT_WINDOW_TOOLBAR TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_SAVE_PICTURE
+    SEPARATOR
+    BUTTON      ID_TOGGLE_BORDERS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Processing"
+    BEGIN
+        MENUITEM "&Start",                      ID_PROCESSING_PLAY
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Windows"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOWS_CASCADE
+    END
+    POPUP "&Trace"
+    BEGIN
+        MENUITEM "&Clear Trace window",         ID_CLEAR_TRACE_WINDOW
+        MENUITEM "&Save Trace window...",       ID_SAVE_TRACE
+        MENUITEM SEPARATOR
+        MENUITEM "Show Image &Memory used",     ID_DUMP_MEMORY_POOL
+        MENUITEM "Show &Thread information",    ID_DUMP_THREAD_INFO
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About OmniTracking...",      ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "OmniTracking"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "OmniTracking"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_FRAMES_PROCESSED " "
+    ID_INDICATOR_STREAM_TIME " "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_PROCESSING_PAUSE     "Pause the processing of the input video stream...\nPause processing"
+    ID_SAVE_IMAGE           "Save the current image to a BMP file\nSave Image"
+    ID_PROCESSING_PLAY      "Start processing of the input video stream...\nStart processing"
+    ID_SAVE_PICTURE         "Save the current image as a BMP file\nSave Image"
+    ID_PROCESSING_STOP      "Stop processing the input video stream...\nStop processing"
+    ID_DUMP_MEMORY_POOL     "Show status of Image Memory Pool\nShow Image Memory Pool"
+    ID_CLEAR_TRACE_WINDOW   "Clear the contents of the trace window\nClear Trace window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SAVE_TRACE           "Save contents of Trace window\nSave Trace"
+    ID_DUMP_THREAD_INFO     "Show Process and Thread Information\nShow Threads"
+    ID_SWAP_LEFT_RIGHT      "Swap the left and right direction of this perspective view \nSwap View Left, Right "
+    ID_ZOOM_IN              "Zoom In to see an enlarged view\nZoom In"
+    ID_ZOOM_OUT             "Zoom Out to see a wider field-of-view\nZoom Out"
+    ID_ROLL_CAMERA          "Roll the field of view clockwise\nRoll View"
+    ID_ROLL_CAMERA_CCW      "Roll the field of view counter-clockwise\nRoll View"
+    ID_PAN_CAMERA_LEFT      "Pan the field of view towards the left\nPan View"
+    ID_PAN_CAMERA_RIGHT     "Pan the field of view towards the right\nPan View"
+    ID_TILT_CAMERA_UP       "Tilt the field of view upwards\nTilt View"
+    ID_TILT_CAMERA_DOWN     "Tilt the field of view downwards\nTilt View"
+    ID_SHOW_BORDERS         "Toggle the borders of the perspective views\nToggle Borders"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOWS_CASCADE      "Arranges the windows as overlapping tiles"
+    ID_LOCK_WINDOW          "Locks the window for use of auto-tracking of targets\nLock Window"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_SMALL_APP_ICON      ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+BMP_SPLASH_PICTURE      BITMAP                  "bitmaps\\splash.bmp"
+BMP_SPLASH_TITLE        BITMAP                  "bitmaps\\bmp_spla.bmp"
+IDB_DISABLED_CAMERA_VIEW BITMAP                  "bitmaps\\bitmap1.bmp"
+IDB_CLOCK_FACE          BITMAP                  "bitmaps\\clock.bmp"
+BMP_SPLASH_TITLE1       BITMAP                  "bitmaps\\bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_FLOAT_WINDOW_MENU MENU 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "&Save Image...",              ID_SAVE_PICTURE
+        MENUITEM SEPARATOR
+        MENUITEM "&Close window",               ID_CLOSE_FLOAT_WINDOW
+    END
+END
+
+IDR_FLOAT_WINDOW_MENU_2 MENU 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "&Save Image...",              ID_SAVE_PICTURE
+        MENUITEM SEPARATOR
+        MENUITEM "&Close window",               ID_CLOSE_FLOAT_WINDOW
+        MENUITEM SEPARATOR
+        MENUITEM "&Track this object",          ID_TRACK_OBJECT
+        MENUITEM SEPARATOR
+        MENUITEM "Position Window &1",          ID_PERSPECTIVE_1
+        MENUITEM "Position Window &2",          ID_PERSPECTIVE_2
+        MENUITEM "Position Window &3",          ID_PERSPECTIVE_3
+        MENUITEM "Position Window &4",          ID_PERSPECTIVE_4
+        MENUITEM "Position Window &5",          ID_PERSPECTIVE_5
+        MENUITEM "Position Window &6",          ID_PERSPECTIVE_6
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\OmniApp2.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPLASH_WINDOW DIALOGEX 0, 0, 445, 270
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         7118,IDC_STATIC,"Static",SS_BITMAP,0,0,445,89
+    CONTROL         7117,IDC_STATIC,"Static",SS_BITMAP,0,86,139,184
+    LTEXT           "Version ??",IDC_SPLASH_VERSION,194,112,204,9
+    LTEXT           "Build:  ????",IDC_SPLASH_BUILD,194,134,204,9
+    LTEXT           "Libraries: ",IDC_SPLASH_LIBRARIES,194,156,204,71
+END
+
+IDD_CAMERA_VIEW_LIST DIALOGEX 0, 0, 79, 198
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Folder",IDC_VIDEO_LABEL,10,9,52,9,NOT WS_VISIBLE,0,HIDC_VIDEO_LABEL
+    CONTROL         133,IDC_VIDEO_BOX,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,11,64,30,22
+    LTEXT           "Folder",IDC_VIDEO_LABEL2,10,27,52,9,NOT WS_VISIBLE
+    CONTROL         133,IDC_VIDEO_BOX2,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,15,68,30,22
+    LTEXT           "Folder",IDC_VIDEO_LABEL3,10,36,52,9,NOT WS_VISIBLE
+    CONTROL         133,IDC_VIDEO_BOX3,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,20,72,30,22
+    CONTROL         133,IDC_VIDEO_BOX4,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,26,76,30,22
+    LTEXT           "Folder",IDC_VIDEO_LABEL4,10,18,52,9,NOT WS_VISIBLE
+    LTEXT           "Folder",IDC_VIDEO_LABEL5,10,45,52,9,NOT WS_VISIBLE
+    CONTROL         133,IDC_VIDEO_BOX5,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,32,79,30,22
+    CONTROL         133,IDC_VIDEO_BOX6,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,12,107,30,22
+    CONTROL         133,IDC_VIDEO_BOX7,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,18,113,30,22
+    CONTROL         133,IDC_VIDEO_BOX8,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,23,118,30,22
+    CONTROL         133,IDC_VIDEO_BOX9,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,29,124,30,22
+    CONTROL         133,IDC_VIDEO_BOX10,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,36,126,30,22
+    PUSHBUTTON      "+",IDC_CREATE_VIEW,4,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "+",IDC_CREATE_VIEW2,10,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "+",IDC_CREATE_VIEW3,15,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "+",IDC_CREATE_VIEW4,21,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "+",IDC_CREATE_VIEW5,26,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    PUSHBUTTON      "+",IDC_CREATE_VIEW6,32,160,8,9,NOT WS_VISIBLE | NOT WS_TABSTOP
+    CONTROL         133,IDC_VIDEO_BOX11,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,42,132,30,22
+    CONTROL         133,IDC_VIDEO_BOX12,"Static",SS_BITMAP | SS_CENTERIMAGE | NOT WS_VISIBLE | WS_BORDER,48,138,30,22
+END
+
+IDD_FLOATING_WINDOW DIALOGEX 0, 0, 369, 142
+STYLE DS_SETFONT | DS_3DLOOK | WS_CAPTION | WS_VSCROLL | WS_HSCROLL | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Image 01"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+IDD_CLOSURE_DLG DIALOGEX 0, 0, 236, 84
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Please wait while any running image processing is stopped, memory resources released and threads closed.",IDC_STATIC,91,7,128,25
+    LTEXT           "This may take a few seconds......",IDC_STATIC,91,39,128,14
+    CONTROL         137,IDC_STATIC,"Static",SS_BITMAP,7,7,77,70
+END
+
+IDD_DIALOG1 DIALOG  0, 0, 188, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CAMERA_VIEW_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 72
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_FLOATING_WINDOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 355
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_CLOSURE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_SAVE_PICTURE         "Save the current image as a BMP file\nSave Image"
+    ID_CLOSE_FLOAT_WINDOW   "Close the window...\nClose"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_AUTO_TRACK_OBJECT    "Automatically track this object in one of the virtual perspective cameras"
+    ID_PERSPECTIVE_1        "Change position of Perspective Window 1 to this location"
+    ID_PERSPECTIVE_2        "Change position of Perspective Window 2 to this location"
+    ID_PERSPECTIVE_3        "Change position of Perspective Window 3 to this location"
+    ID_PERSPECTIVE_4        "Change position of Perspective Window 4 to this location"
+    ID_PERSPECTIVE_5        "Change position of Perspective Window 5 to this location"
+    ID_PERSPECTIVE_6        "Change position of Perspective Window 6 to this location"
+    ID_TRACK_OBJECT         "Track the object near to the cursor using the first available perspective view"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+BMP_BACKGROUND00        BITMAP                  "bitmaps\\default.bmp"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\OmniApp2.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,4 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by OmniApp2.rc
+//
+#define HIDC_VIDEO_LABEL                0x808403eb    // IDD_CAMERA_VIEW_LIST
