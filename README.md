@@ -1,5 +1,5 @@
-This is the source code for my MSc project, titled "Omnidirectional Visual Tracking", that was submitted 
-in 2003 for my MSc Engineering & Information Science degree at the University of Reading.
+This is the source code for my **MSc project**, titled **"Omnidirectional Visual Tracking"**, that was submitted 
+in 2003 for my **MSc Engineering & Information Science degree** at the **University of Reading**.
 
 The source code is C++. The dataset used for training and testing the algorithms is the PETS 2001 dataset 
 that is available for download at http://www.cvg.reading.ac.uk/slides/pets.html. Use the version that is
@@ -14,7 +14,7 @@ that they give can be found here: http://www.cis.upenn.edu/~kostas/omni.html.
 
 Below is the reproduced abstract of my thesis.
 
-ABSTRACT
+**ABSTRACT**
 
 Omnidirectional vision is the ability to see in all directions at the same time. Sensors 
 that are able to achieve omnidirectional vision offer several advantages to many areas 
